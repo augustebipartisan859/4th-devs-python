@@ -9,7 +9,7 @@ and paragraph-type classification used across the grounding pipeline.
 
 ---
 
-@Author:        Daniel Szczepanski
+@Author:        Claude Sonnet 4.6
 @Created on:    09.03.2026
 @Based on:      `src/utils/text.js`
 

@@ -9,7 +9,7 @@ concept-annotated spans, then inserts the result into the HTML template.
 
 ---
 
-@Author:        Daniel Szczepanski
+@Author:        Claude Sonnet 4.6
 @Created on:    09.03.2026
 @Based on:      `src/pipeline/ground.js`
 

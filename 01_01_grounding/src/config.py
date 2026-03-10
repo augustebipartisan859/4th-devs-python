@@ -9,7 +9,7 @@ API settings, and CLI argument parsing.
 
 ---
 
-@Author:        Daniel Szczepanski
+@Author:        Claude Sonnet 4.6
 @Created on:    09.03.2026
 @Based on:      `src/config.js`
 
@@ -19,6 +19,12 @@ import argparse
 import sys
 from pathlib import Path
 from typing import Any
+
+# MODELS SELECTION
+EXTRACT_LLM = "gpt-5.4"
+SEARCH_LLM = "gpt-5.4"
+GROUND_LLM = "gpt-5.4"
+
 
 _SRC_DIR = Path(__file__).parent
 _PROJECT_DIR = _SRC_DIR.parent
@@ -41,9 +47,9 @@ paths: dict[str, Path] = {
 }
 
 models: dict[str, str] = {
-    "extract": resolve_model_for_provider("gpt-5.4"),
-    "search": resolve_model_for_provider("gpt-5.4"),
-    "ground": resolve_model_for_provider("gpt-5.4"),
+    "extract": resolve_model_for_provider(EXTRACT_LLM),
+    "search": resolve_model_for_provider(SEARCH_LLM),
+    "ground": resolve_model_for_provider(GROUND_LLM),
 }
 
 api: dict[str, Any] = {

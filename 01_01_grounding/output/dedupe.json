@@ -1,0 +1,211 @@
+{
+  "sourceFile": "c:\\Users\\Daniel Szczepanski\\Software Dev\\04_Trainings\\AI_Devs 4\\4th-devs-python\\01_01_grounding\\notes\\crypto.md",
+  "model": "openai/gpt-5.4",
+  "sourceHash": "77f9f11488f95cf87bf90af42729684b52c9dd8e2bcf7e4fde758f6c46f722da",
+  "conceptsHash": "aaaaa5058546abb28ab46466babef6712faf8704a9c4313dee6c2fa31b213290",
+  "paragraphCount": 13,
+  "conceptCount": 29,
+  "dedupeHash": "67492112a6b6468d1b9185165da80a57b902d4809343af851351093549d5dced",
+  "groups": [
+    {
+      "canonical": "Bitcoin as a decentralized digital currency without intermediaries",
+      "ids": [
+        1
+      ],
+      "aliases": [
+        "a decentralized digital currency without central banks or intermediaries"
+      ],
+      "rationale": "Definition with no strict paraphrase match in the list."
+    },
+    {
+      "canonical": "Bitcoin: A Peer-to-Peer Electronic Cash System",
+      "ids": [
+        2
+      ],
+      "aliases": [
+        "whitepaper titled \"Bitcoin: A Peer-to-Peer Electronic Cash System\""
+      ],
+      "rationale": "Reference to a specific work; no equivalent reference entry."
+    },
+    {
+      "canonical": "Bitcoin creation by Satoshi Nakamoto in 2008",
+      "ids": [
+        3
+      ],
+      "aliases": [
+        "Bitcoin was created in 2008 by an anonymous person or group using the pseudonym Satoshi Nakamoto"
+      ],
+      "rationale": "Historical claim with no strict paraphrase duplicate."
+    },
+    {
+      "canonical": "Bitcoin blockchain throughput vs Visa",
+      "ids": [
+        5
+      ],
+      "aliases": [
+        "Bitcoin's blockchain processes roughly 7 transactions per second while Visa handles around 24,000"
+      ],
+      "rationale": "Quantitative comparison not duplicated elsewhere."
+    },
+    {
+      "canonical": "Hash-linked block structure",
+      "ids": [
+        6
+      ],
+      "aliases": [
+        "Each block contains the cryptographic hash of the previous block, creating an immutable chain"
+      ],
+      "rationale": "Technical claim with no strict paraphrase match."
+    },
+    {
+      "canonical": "Bitcoin block reward halves about every four years",
+      "ids": [
+        8
+      ],
+      "aliases": [
+        "The Bitcoin block reward halves approximately every four years"
+      ],
+      "rationale": "Distinct issuance-schedule claim with no duplicate."
+    },
+    {
+      "canonical": "Proof of Work mining puzzle competition",
+      "ids": [
+        9
+      ],
+      "aliases": [
+        "In Proof of Work, miners compete to solve complex mathematical puzzles"
+      ],
+      "rationale": "Method description; no same-category paraphrase present."
+    },
+    {
+      "canonical": "Initial Bitcoin block reward was 50 BTC",
+      "ids": [
+        10
+      ],
+      "aliases": [
+        "The Bitcoin block reward started at 50 BTC"
+      ],
+      "rationale": "Specific historical claim with no duplicate."
+    },
+    {
+      "canonical": "Bitcoin uses Proof of Work",
+      "ids": [
+        11
+      ],
+      "aliases": [
+        "Bitcoin uses what is called Proof of Work"
+      ],
+      "rationale": "Consensus-mechanism claim distinct from method descriptions and other claims."
+    },
+    {
+      "canonical": "Ethereum proposal and launch timeline",
+      "ids": [
+        13
+      ],
+      "aliases": [
+        "Ethereum was proposed by Vitalik Buterin in 2013 and launched in 2015"
+      ],
+      "rationale": "Historical timeline claim with no strict paraphrase duplicate."
+    },
+    {
+      "canonical": "Ethereum energy consumption reduced by approximately 99.95%",
+      "ids": [
+        16
+      ],
+      "aliases": [
+        "The transition reduced Ethereum's energy consumption by approximately 99.95% according to the Ethereum Foundation"
+      ],
+      "rationale": "Reported result distinct from the transition claim itself."
+    },
+    {
+      "canonical": "Ethereum's transition from Proof of Work to Proof of Stake",
+      "ids": [
+        17
+      ],
+      "aliases": [
+        "In September 2022, Ethereum transitioned from Proof of Work to Proof of Stake"
+      ],
+      "rationale": "Protocol-change claim with no same-category paraphrase."
+    },
+    {
+      "canonical": "DeFi TVL peaked above $180 billion in late 2021 before falling",
+      "ids": [
+        20
+      ],
+      "aliases": [
+        "Total value locked in DeFi protocols peaked at over $180 billion in late 2021 before declining significantly"
+      ],
+      "rationale": "Historical quantitative claim distinct from the TVL metric definition."
+    },
+    {
+      "canonical": "Total value locked (TVL) in DeFi protocols",
+      "ids": [
+        21
+      ],
+      "aliases": [
+        "TVL in DeFi protocols"
+      ],
+      "rationale": "Metric term with no equivalent metric entry."
+    },
+    {
+      "canonical": "Decentralized finance (DeFi) applications",
+      "ids": [
+        22
+      ],
+      "aliases": [
+        "DeFi applications that let users lend, borrow, and trade without traditional financial intermediaries"
+      ],
+      "rationale": "Definition entry with no strict paraphrase duplicate."
+    },
+    {
+      "canonical": "Uniswap cumulative trading volume since launch",
+      "ids": [
+        23
+      ],
+      "aliases": [
+        "Uniswap has processed over $1.8 trillion in trading volume since its launch"
+      ],
+      "rationale": "Quantitative claim not duplicated elsewhere."
+    },
+    {
+      "canonical": "Uniswap launch and AMM pioneering",
+      "ids": [
+        24
+      ],
+      "aliases": [
+        "Uniswap, launched in 2018, pioneered the automated market maker model"
+      ],
+      "rationale": "Historical claim distinct from trading-volume claims."
+    },
+    {
+      "canonical": "SEC classification of most cryptocurrencies as securities, excluding Bitcoin and Ethereum",
+      "ids": [
+        26
+      ],
+      "aliases": [
+        "The SEC classified most cryptocurrencies as securities, with exceptions for Bitcoin and Ethereum"
+      ],
+      "rationale": "Regulatory claim with no strict paraphrase duplicate."
+    },
+    {
+      "canonical": "Programmatic token sales on exchanges may not be securities transactions",
+      "ids": [
+        27
+      ],
+      "aliases": [
+        "Programmatic sales of tokens on exchanges do not necessarily constitute securities transactions"
+      ],
+      "rationale": "Legal result distinct from the case reference itself."
+    },
+    {
+      "canonical": "SEC v. Ripple Labs",
+      "ids": [
+        28
+      ],
+      "aliases": [
+        "SEC v. Ripple case in 2023"
+      ],
+      "rationale": "Reference to a specific legal case; no equivalent reference entry."
+    }
+  ]
+}

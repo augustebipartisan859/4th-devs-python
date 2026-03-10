@@ -1,0 +1,304 @@
+{
+  "sourceFile": "c:\\Users\\Daniel Szczepanski\\Software Dev\\04_Trainings\\AI_Devs 4\\4th-devs-python\\01_01_grounding\\notes\\crypto.md",
+  "model": "openai/gpt-5.4:online",
+  "sourceHash": "77f9f11488f95cf87bf90af42729684b52c9dd8e2bcf7e4fde758f6c46f722da",
+  "dedupeHash": "67492112a6b6468d1b9185165da80a57b902d4809343af851351093549d5dced",
+  "resultsByCanonical": {
+    "Bitcoin as a decentralized digital currency without intermediaries": {
+      "canonical": "Bitcoin as a decentralized digital currency without intermediaries",
+      "summary": "Bitcoin is a decentralized digital currency introduced in 2008 as a peer-to-peer electronic cash system. It is designed to let users send value directly over a distributed network without relying on a central bank or traditional payment intermediary; instead, transactions are validated by network participants and recorded on a public blockchain. Official and governmental sources also note that this model comes with tradeoffs, including price volatility, limited consumer protections, and irreversible transactions.",
+      "keyPoints": [
+        "The original Bitcoin whitepaper, published in 2008 by Satoshi Nakamoto, describes Bitcoin as a \"peer-to-peer electronic cash system\" built to enable online payments without going through a financial institution.",
+        "Bitcoin.org states that Bitcoin uses peer-to-peer technology to operate with no central authority or banks, and that transaction management and issuance are carried out collectively by the network.",
+        "Congressional Research Service materials explain that cryptocurrencies such as Bitcoin use cryptography and decentralized consensus incentives, rather than traditional institutions like chartered banks, supervision, or deposit insurance.",
+        "The U.S. Consumer Financial Protection Bureau has warned that Bitcoin is not backed by any government or central bank and that users may lack protections such as deposit insurance or payment reversal rights."
+      ],
+      "sources": [
+        {
+          "title": "Bitcoin Whitepaper - A Peer-to-Peer Electronic Cash System | Satoshi Nakamoto",
+          "url": "https://btcpaper.org/"
+        },
+        {
+          "title": "Bitcoin - Open source P2P money",
+          "url": "https://bitcoin.org/en/bitcoin-us/statement-of-purpose"
+        },
+        {
+          "title": "Introduction to Cryptocurrency | Congress.gov | Library of Congress",
+          "url": "https://www.congress.gov/crs-product/IF12405"
+        },
+        {
+          "title": "CFPB Warns Consumers About Bitcoin | Consumer Financial Protection Bureau",
+          "url": "https://www.consumerfinance.gov/about-us/newsroom/cfpb-warns-consumers-about-bitcoin/"
+        }
+      ]
+    },
+    "Bitcoin: A Peer-to-Peer Electronic Cash System": {
+      "canonical": "Bitcoin: A Peer-to-Peer Electronic Cash System",
+      "summary": "\u201cBitcoin: A Peer-to-Peer Electronic Cash System\u201d is the original Bitcoin whitepaper authored under the pseudonym Satoshi Nakamoto and released on October 31, 2008. The paper proposes a decentralized electronic payment system that solves double-spending without a trusted intermediary by combining a peer-to-peer network, cryptographic signatures, timestamped blocks, and proof-of-work. It is widely treated as the foundational document for Bitcoin and modern blockchain-based cryptocurrencies.",
+      "keyPoints": [
+        "The whitepaper was published under the name Satoshi Nakamoto on October 31, 2008, and introduced Bitcoin to a cryptography mailing list as a new form of peer-to-peer electronic cash.",
+        "The paper\u2019s core technical contribution is a method for preventing double-spending without a central authority, using a public transaction history secured by proof-of-work and chained blocks.",
+        "The original document is nine pages long and has been reproduced by multiple reputable sources, including Bitcoin.org and O\u2019Reilly\u2019s Mastering Bitcoin appendix.",
+        "The whitepaper\u2019s concluding claim is that electronic transactions can work \"without relying on trust,\" summarizing Bitcoin\u2019s design goal of replacing trusted third parties with cryptographic proof and distributed consensus."
+      ],
+      "sources": [
+        {
+          "title": "Bitcoin: A Peer-to-Peer Electronic Cash System",
+          "url": "https://bitcoin.org/files/bitcoin-paper/bitcoin_th.pdf"
+        },
+        {
+          "title": "The Bitcoin Whitepaper by Satoshi Nakamoto - Mastering Bitcoin, 2nd Edition [Book]",
+          "url": "https://www.oreilly.com/library/view/mastering-bitcoin-2nd/9781491954379/app01.html"
+        },
+        {
+          "title": "Satoshi Nakamoto",
+          "url": "https://en.wikipedia.org/wiki/Satoshi_Nakamoto"
+        },
+        {
+          "title": "The Bitcoin Whitepaper",
+          "url": "https://bitcoinmagazine.com/glossary/the-bitcoin-whitepaper"
+        },
+        {
+          "title": "Bitcoin: A Peer-to-Peer Electronic Cash System",
+          "url": "https://www.bitcoin.com/bitcoin-draft.pdf"
+        }
+      ]
+    },
+    "Bitcoin creation by Satoshi Nakamoto in 2008": {
+      "canonical": "Bitcoin creation by Satoshi Nakamoto in 2008",
+      "summary": "Bitcoin was introduced in 2008 by the pseudonymous Satoshi Nakamoto, generally understood to be an anonymous person or group. The key 2008 milestone was the publication of the white paper, \u201cBitcoin: A Peer-to-Peer Electronic Cash System,\u201d on October 31, 2008; the live Bitcoin network itself began later, with the genesis block mined on January 3, 2009.",
+      "keyPoints": [
+        "Satoshi Nakamoto is the name used by the presumed creator or creators of Bitcoin, and Nakamoto\u2019s real identity remains unconfirmed.",
+        "Bitcoin\u2019s foundational white paper was released on October 31, 2008, presenting a peer-to-peer electronic cash system without a central authority.",
+        "The Bitcoin network was launched on January 3, 2009, when Nakamoto mined the genesis block, so Bitcoin was proposed in 2008 but operationally launched in 2009.",
+        "Reference works and historical summaries consistently describe Bitcoin as originating from the 2008 white paper and the 2009 software/network launch."
+      ],
+      "sources": [
+        {
+          "title": "Satoshi Nakamoto | Definition, Bitcoin, & Facts | Britannica",
+          "url": "https://www.britannica.com/biography/Satoshi-Nakamoto"
+        },
+        {
+          "title": "Satoshi Nakamoto publishes a paper introducing Bitcoin | October 31, 2008 | HISTORY",
+          "url": "https://www.history.com/this-day-in-history/satoshi-nakamoto-publishes-a-paper-introducing-bitcoin"
+        },
+        {
+          "title": "Bitcoin",
+          "url": "https://en.wikipedia.org/wiki/Bitcoin"
+        },
+        {
+          "title": "History of bitcoin",
+          "url": "https://en.wikipedia.org/wiki/History_of_bitcoin"
+        }
+      ]
+    },
+    "Bitcoin blockchain throughput vs Visa": {
+      "canonical": "Bitcoin blockchain throughput vs Visa",
+      "summary": "The comparison is directionally correct but the exact Visa figure is often misstated. Bitcoin\u2019s base layer is commonly estimated at about 3\u20137 transactions per second, driven by ~10-minute block intervals and limited block capacity. Visa does not appear to use 24,000 TPS as its main current official figure; recent Visa material says Visa\u2019s network has capacity for more than 65,000 transaction messages per second, while many secondary sources cite much lower real-world average throughput, often around 1,700\u20132,000 TPS.",
+      "keyPoints": [
+        "Bitcoin base-layer throughput is constrained by protocol design: blocks are produced about every 10 minutes, and Bitcoin references commonly place theoretical on-chain capacity at roughly 7 TPS, with some estimates ranging from about 3.3 to 7 TPS.",
+        "Visa\u2019s own published material says its network can handle more than 65,000 transaction messages per second, which is much higher than the often-repeated 24,000 TPS figure.",
+        "Multiple Bitcoin and blockchain reference sources compare Bitcoin\u2019s ~7 TPS to Visa\u2019s average operational throughput closer to roughly 1,700\u20132,000 TPS, distinguishing average load from maximum network capacity.",
+        "So the claim is best expanded as: Bitcoin processes roughly 3\u20137 on-chain transactions per second, while Visa\u2019s network capacity is tens of thousands of transaction messages per second; 24,000 TPS is an older or secondary-source comparison point, not the clearest current official Visa benchmark."
+      ],
+      "sources": [
+        {
+          "title": "Visa Crypto Thought Leadership \u2013 A deep dive on Solana | Visa",
+          "url": "https://usa.visa.com/solutions/crypto/deep-dive-on-solana.html"
+        },
+        {
+          "title": "Scalability FAQ - Bitcoin Wiki",
+          "url": "https://en.bitcoin.it/wiki/Scalability_FAQ"
+        },
+        {
+          "title": "Scalability - Bitcoin Wiki",
+          "url": "https://en.bitcoin.it/wiki/Scalability"
+        },
+        {
+          "title": "Bitcoin scalability problem",
+          "url": "https://en.wikipedia.org/wiki/Bitcoin_scalability_problem"
+        },
+        {
+          "title": "Rapido: A Layer2 Payment System for Decentralized Currencies",
+          "url": "https://arxiv.org/abs/1808.01561"
+        }
+      ]
+    },
+    "Hash-linked block structure": {
+      "canonical": "Hash-linked block structure",
+      "summary": "A hash-linked block structure is the core blockchain data pattern in which each block stores a cryptographic hash of the previous block, so blocks become tamper-evident and ordered in a chain. This idea appears in the Bitcoin white paper\u2019s hash-based timestamp chain and is commonly described as a blockchain header linking to the prior block\u2019s hash; changing an earlier block changes its hash and breaks later links unless the subsequent chain is recomputed and, in systems like Bitcoin, the required proof-of-work is redone.",
+      "keyPoints": [
+        "Satoshi Nakamoto\u2019s 2008 Bitcoin paper describes a timestamp chain where \u201ceach timestamp includes the previous timestamp in its hash,\u201d establishing the historical basis for hash-linked blocks.",
+        "Standard blockchain descriptions define a block as containing at least transaction data, a timestamp, and the cryptographic hash of the previous block, which links records in chronological order.",
+        "Because secure hash functions are highly sensitive to input changes, even a small modification to an old block changes that block\u2019s hash and makes the next block\u2019s stored previous-hash reference invalid.",
+        "In proof-of-work blockchains such as Bitcoin, rewriting history is not just a matter of recalculating hashes; an attacker must also redo the accumulated proof-of-work for the altered block and all following blocks."
+      ],
+      "sources": [
+        {
+          "title": "Bitcoin: A Peer-to-Peer Electronic Cash System | Satoshi Nakamoto Institute",
+          "url": "https://nakamotoinstitute.org/library/bitcoin/"
+        },
+        {
+          "title": "The Quotable Satoshi - Transactions | Satoshi Nakamoto Institute",
+          "url": "https://satoshi.nakamotoinstitute.org/he/quotes/transactions"
+        },
+        {
+          "title": "Blockchain",
+          "url": "https://en.wikipedia.org/wiki/Blockchain"
+        },
+        {
+          "title": "Hash chain",
+          "url": "https://en.wikipedia.org/wiki/Hash_chain"
+        },
+        {
+          "title": "getbestblockhash \u2014 Bitcoin",
+          "url": "https://developer.bitcoin.org/reference/rpc/getbestblockhash.html"
+        }
+      ]
+    },
+    "Bitcoin block reward halves about every four years": {
+      "canonical": "Bitcoin block reward halves about every four years",
+      "summary": "Bitcoin\u2019s block subsidy is designed to halve every 210,000 blocks, which works out to roughly every four years because Bitcoin targets an average block time of about 10 minutes. This schedule has already reduced the reward from 50 BTC at launch in 2009 to 25 BTC in 2012, 12.5 BTC in 2016, 6.25 BTC in 2020, and 3.125 BTC after the most recent halving in April 2024.",
+      "keyPoints": [
+        "The halving is triggered by block height, not by calendar date: every 210,000 blocks the mining reward is cut by 50%.",
+        "Bitcoin\u2019s historical halvings occurred at blocks 210,000 (November 28, 2012), 420,000 (July 9, 2016), 630,000 (May 11, 2020), and 840,000 (April 20, 2024).",
+        "The current block reward is 3.125 BTC per block following the April 2024 halving.",
+        "Because block intervals vary around the 10-minute target, halvings happen approximately\u2014not exactly\u2014every four years."
+      ],
+      "sources": [
+        {
+          "title": "Bitcoin's latest 'halving' has arrived. Here's what you need to know",
+          "url": "https://apnews.com/article/d6053474e647114220648902fb02be5a"
+        },
+        {
+          "title": "Bitcoin Halving 2028: Countdown, Dates, Chart & More",
+          "url": "https://bitref.com/halving/"
+        },
+        {
+          "title": "Bitcoin halving date history, prices & 2024 halving countdown",
+          "url": "https://cryptoanswers.com/faq/bitcoin-halving-dates-history/"
+        },
+        {
+          "title": "\ud83d\udcb2 The halving (and price)",
+          "url": "https://www.axios.com/newsletters/axios-crypto-a36cb522-fbb6-4f6a-b029-9a0f942367c7"
+        }
+      ]
+    },
+    "Proof of Work mining puzzle competition": {
+      "canonical": "Proof of Work mining puzzle competition",
+      "summary": "Proof of Work (PoW) is a blockchain consensus mechanism in which miners compete in a trial-and-error race to find a valid cryptographic solution for the next block. The first miner to find a valid nonce/hash earns the right to add the block and receive a reward, while other miners\u2019 unsuccessful computations do not directly contribute to that block. This competition helps secure the network by making it costly to rewrite history or attack the chain. ([ethereum.org](https://ethereum.org/ne-np/ethereum-vs-bitcoin/?utm_source=openai))",
+      "keyPoints": [
+        "In Bitcoin-style PoW, miners compete to solve cryptographic puzzles; the first to solve one adds the next block of transactions and earns a block reward. ([ethereum.org](https://ethereum.org/ne-np/ethereum-vs-bitcoin/?utm_source=openai))",
+        "Ethereum\u2019s PoW documentation explains that miners performed an 'intense race of trial and error' to find a valid nonce, and that verification of a found solution is easy for other nodes. ([ethereum.org](https://ethereum.org/ar/developers/docs/consensus-mechanisms/pow/?utm_source=openai))",
+        "PoW security comes from the cumulative computational work behind the chain: to consistently outpace the network and create malicious blocks, an attacker would need majority mining power (commonly described as over 51%). ([ethereum.org](https://ethereum.org/ar/developers/docs/consensus-mechanisms/pow/?utm_source=openai))",
+        "This competitive design is also why PoW is energy-intensive: many miners expend computation, but only one miner wins each block. Ethereum.org and Consensys both describe this as a major drawback of PoW. ([ethereum.org](https://ethereum.org/ar/developers/docs/consensus-mechanisms/pow/?utm_source=openai))"
+      ],
+      "sources": [
+        {
+          "title": "Ethereum vs Bitcoin: what is the difference? | ethereum.org",
+          "url": "https://ethereum.org/ne-np/ethereum-vs-bitcoin/"
+        },
+        {
+          "title": "Proof-of-work (PoW) | ethereum.org",
+          "url": "https://ethereum.org/ar/developers/docs/consensus-mechanisms/pow/"
+        },
+        {
+          "title": "Institutional Staking on Ethereum: One year after the launch of the Beacon Chain | Consensys",
+          "url": "https://consensys.io/blog/institutional-staking-on-ethereum-one-year-after-the-launch-of-the-beacon-chain"
+        }
+      ]
+    },
+    "Initial Bitcoin block reward was 50 BTC": {
+      "canonical": "Initial Bitcoin block reward was 50 BTC",
+      "summary": "Verified: Bitcoin\u2019s block subsidy began at 50 BTC per block when the network launched on January 3, 2009. The first subsidy halving occurred at block 210,000 on November 28, 2012, reducing the reward from 50 BTC to 25 BTC; this confirms that the original block reward was indeed 50 BTC.",
+      "keyPoints": [
+        "The Bitcoin network began with the genesis block (block 0) on January 3, 2009, and multiple sources state its reward was 50 BTC.",
+        "Bitcoin\u2019s issuance schedule halves the block subsidy every 210,000 blocks; the first halving on November 28, 2012 cut the reward from 50 BTC to 25 BTC.",
+        "The first halving meant 10,500,000 BTC had been issued in the initial era, which is half of Bitcoin\u2019s 21 million maximum supply.",
+        "Some sources note a nuance: the genesis block\u2019s 50 BTC reward is historically recorded but is treated as unspendable, while the 50 BTC subsidy schedule applied across Bitcoin\u2019s earliest mining era."
+      ],
+      "sources": [
+        {
+          "title": "Halving day 2012 - Bitcoin Wiki",
+          "url": "https://en.bitcoin.it/wiki/Halving_day_2012"
+        },
+        {
+          "title": "History of bitcoin",
+          "url": "https://en.wikipedia.org/wiki/History_of_bitcoin"
+        },
+        {
+          "title": "Satoshi Nakamoto",
+          "url": "https://en.wikipedia.org/wiki/Satoshi_Nakamoto"
+        },
+        {
+          "title": "Bitcoin protocol",
+          "url": "https://en.wikipedia.org/wiki/Bitcoin_protocol"
+        },
+        {
+          "title": "Why the Bitcoin Genesis Block Reward Is Unspendable",
+          "url": "https://sea-mw.org/why-the-bitcoin-genesis-block-reward-is-unspendable"
+        }
+      ]
+    },
+    "Bitcoin uses Proof of Work": {
+      "canonical": "Bitcoin uses Proof of Work",
+      "summary": "Bitcoin uses a Proof of Work (PoW) consensus mechanism. In Bitcoin, miners compete to find a block header hash below the network\u2019s current difficulty target by repeatedly changing a nonce and hashing block data with SHA-256-based hashing; other nodes can verify the result quickly. The valid chain with the most accumulated proof of work is treated as the authoritative blockchain, which helps Bitcoin reach consensus without a central authority.",
+      "keyPoints": [
+        "Authoritative and reference sources state that Bitcoin\u2019s consensus mechanism is Proof of Work (PoW), not Proof of Stake.",
+        "Bitcoin\u2019s mining process is based on Hashcash-style proof of work, where miners vary a 32-bit nonce and other block-header fields until the block hash meets the difficulty target.",
+        "Proof of Work is intentionally costly to produce but easy to verify, which helps secure Bitcoin against block-history tampering and double-spend attempts.",
+        "Bitcoin nodes and lightweight clients follow the chain with the most accumulated proof of work, making total work a core rule for chain selection and consensus."
+      ],
+      "sources": [
+        {
+          "title": "Proof of work - Bitcoin Wiki",
+          "url": "https://en.bitcoin.it/wiki/Proof_of_work"
+        },
+        {
+          "title": "Validation - Bitcoin Core Features",
+          "url": "https://bitcoin.org/en/bitcoin-core/features/validation"
+        },
+        {
+          "title": "Nonce - Bitcoin Wiki",
+          "url": "https://en.bitcoin.it/wiki/Nonce"
+        },
+        {
+          "title": "Hashcash - Bitcoin Wiki",
+          "url": "https://en.bitcoin.it/Hashcash"
+        },
+        {
+          "title": "consensus mechanism | Wex | US Law | LII / Legal Information Institute",
+          "url": "https://www.law.cornell.edu/wex/consensus_mechanism"
+        }
+      ]
+    },
+    "Ethereum proposal and launch timeline": {
+      "canonical": "Ethereum proposal and launch timeline",
+      "summary": "Ethereum was conceived by Vitalik Buterin in late 2013, publicly announced in January 2014, and launched as the Frontier mainnet on July 30, 2015. Official Ethereum sources describe the whitepaper as published in 2014 before the project\u2019s 2015 launch, while Ethereum Foundation history notes development began from Vitalik\u2019s vision and early commits in late 2013, leading to the genesis block in 2015.",
+      "keyPoints": [
+        "Ethereum Foundation history states Ethereum was created by Vitalik Buterin in 2013 and publicly announced at the North American Bitcoin Conference in Miami in January 2014.",
+        "The Ethereum whitepaper is officially described by ethereum.org as having been originally published in 2014, before the project launched in 2015.",
+        "The Ethereum Foundation blog says the first code commit was on Christmas Eve 2013, showing active development began in late 2013.",
+        "Ethereum officially launched on July 30, 2015, when the genesis block was generated and Frontier, the first live release, went live."
+      ],
+      "sources": [
+        {
+          "title": "Historia de Ethereum: fundador, lanzamiento y propiedad | ethereum.org",
+          "url": "https://ethereum.org/es/ethereum-history-founder-and-ownership/"
+        },
+        {
+          "title": "Ethereum Whitepaper | ethereum.org",
+          "url": "https://ethereum.org/nb/whitepaper/"
+        },
+        {
+          "title": "Mihai\u2019s Ethereum Project Update. The First Year. | Ethereum Foundation Blog",
+          "url": "https://blog.ethereum.org/2015/03/14/ethereum-the-first-year"
+        },
+        {
+          "title": "Ethereum Launches | Ethereum Foundation Blog",
+          "url": "https://blog.ethereum.org/2015/07/30/ethereum-launches"
+        }
+      ]
+    }
+  }
+}

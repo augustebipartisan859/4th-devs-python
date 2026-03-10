@@ -8,7 +8,7 @@ Prompt builder for the concept deduplication pipeline stage.
 
 ---
 
-@Author:        Daniel Szczepanski
+@Author:        Claude Sonnet 4.6
 @Created on:    09.03.2026
 @Based on:      `src/prompts/dedupe.js`
 

@@ -8,7 +8,7 @@ Prompt builder for the concept extraction pipeline stage.
 
 ---
 
-@Author:        Daniel Szczepanski
+@Author:        Claude Sonnet 4.6
 @Created on:    09.03.2026
 @Based on:      `src/prompts/extract.js`
 

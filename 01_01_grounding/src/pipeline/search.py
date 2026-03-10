@@ -9,7 +9,7 @@ caches results to search_results.json, and supports OpenRouter's :online model v
 
 ---
 
-@Author:        Daniel Szczepanski
+@Author:        Claude Sonnet 4.6
 @Created on:    09.03.2026
 @Based on:      `src/pipeline/search.js`
 

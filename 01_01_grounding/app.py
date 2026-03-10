@@ -10,7 +10,7 @@ HTML annotated with fact-checked, source-backed concept tooltips.
 
 ---
 
-@Author:        Daniel Szczepanski
+@Author:        Claude Sonnet 4.6
 @Created on:    09.03.2026
 @Based on:      `app.js`
 

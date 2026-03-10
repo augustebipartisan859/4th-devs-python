@@ -8,7 +8,7 @@ JSON schema for grounded paragraph HTML responses from the Responses API.
 
 ---
 
-@Author:        Daniel Szczepanski
+@Author:        Claude Sonnet 4.6
 @Created on:    09.03.2026
 @Based on:      `src/schemas/ground.js`
 

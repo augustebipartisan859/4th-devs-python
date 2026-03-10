@@ -10,7 +10,7 @@ and helpers consumed by all lesson modules.
 
 ---
 
-@Author:        Daniel Szczepanski
+@Author:        Claude Sonnet 4.6
 @Created on:    09.03.2026
 @Based on:      `config.js`
 
@@ -75,6 +75,7 @@ def _resolve_provider() -> str:
 
 
 AI_PROVIDER: str = _resolve_provider()
+print(f"Using AI provider: {AI_PROVIDER}")
 AI_API_KEY: str = OPENAI_API_KEY if AI_PROVIDER == "openai" else OPENROUTER_API_KEY
 RESPONSES_API_ENDPOINT: str = RESPONSES_ENDPOINTS[AI_PROVIDER]
 

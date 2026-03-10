@@ -9,7 +9,7 @@ concepts, caches results to concepts.json, and supports incremental updates.
 
 ---
 
-@Author:        Daniel Szczepanski
+@Author:        Claude Sonnet 4.6
 @Created on:    09.03.2026
 @Based on:      `src/pipeline/extract.js`
 
