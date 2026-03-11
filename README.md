@@ -1,4 +1,8 @@
-<img src="../4th-devs-js/assets/logo.svg" alt="AI_devs 4: Builders" width="200">
+# 4th-devs-python 🐍
+
+Repository contains [AI Devs 4](https://www.aidevs.pl/) course code examples, converted from `JavaScript` project to `Python` for educational purposes.
+
+Created with Claude Code with permission from original repository author: [i-am-alice/4th-devs](https://github.com/i-am-alice/4th-devs).
 
 ## Requirements
 
