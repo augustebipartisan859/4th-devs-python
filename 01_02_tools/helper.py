@@ -120,7 +120,7 @@ def log_tool_call(name: str, args: Dict[str, Any]) -> None:
     """
     print(f"{_label('TOOL', 'magenta')} {_colorize(name, 'bold')}")
     print(_colorize("Arguments:", "cyan"))
-    print(_colorize(json.dumps(args, indent=2), "dim"))
+    print(_colorize(json.dumps(args, indent=2, ensure_ascii=False), "dim"))
 
 
 def log_tool_result(result: Any) -> None:
@@ -130,7 +130,7 @@ def log_tool_result(result: Any) -> None:
         result: Tool result (any JSON-serialisable value).
     """
     print(_colorize("Result:", "yellow"))
-    print(_colorize(json.dumps(result, indent=2), "dim"))
+    print(_colorize(json.dumps(result, indent=2, ensure_ascii=False), "dim"))
     print()
 
 
