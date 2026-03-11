@@ -76,7 +76,7 @@ async def main() -> None:
     server_script = Path(__file__).parent / "src" / "server.py"
 
     server_params = StdioServerParameters(
-        command="python",
+        command=sys.executable,
         args=[str(server_script)],
     )
 

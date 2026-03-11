@@ -41,47 +41,45 @@ Use the appropriate tool for each task. Be concise."""
 
 async def main() -> None:
     # Start in-memory MCP server and connect a client
-    mcp_client = await create_mcp_client(mcp_server)
-    mcp_tool_list = await list_mcp_tools(mcp_client)
+    async with create_mcp_client(mcp_server) as mcp_client:
+        mcp_tool_list = await list_mcp_tools(mcp_client)
 
-    # Unified handler map — MCP and native tools behind the same {execute, label} interface
-    handlers = {
-        **{
-            tool.name: {
-                "execute": lambda args, t=tool: call_mcp_tool(mcp_client, t.name, args),
-                "label": MCP_LABEL,
-            }
-            for tool in mcp_tool_list
-        },
-        **{
-            name: {"execute": fn, "label": NATIVE_LABEL}
-            for name, fn in native_handlers.items()
-        },
-    }
+        # Unified handler map — MCP and native tools behind the same {execute, label} interface
+        handlers = {
+            **{
+                tool.name: {
+                    "execute": lambda args, t=tool: call_mcp_tool(mcp_client, t.name, args),
+                    "label": MCP_LABEL,
+                }
+                for tool in mcp_tool_list
+            },
+            **{
+                name: {"execute": fn, "label": NATIVE_LABEL}
+                for name, fn in native_handlers.items()
+            },
+        }
 
-    tools = [*mcp_tools_to_openai(mcp_tool_list), *native_tools]
-    agent = create_agent(
-        model=MODEL,
-        tools=tools,
-        instructions=INSTRUCTIONS,
-        handlers=handlers,
-    )
+        tools = [*mcp_tools_to_openai(mcp_tool_list), *native_tools]
+        agent = create_agent(
+            model=MODEL,
+            tools=tools,
+            instructions=INSTRUCTIONS,
+            handlers=handlers,
+        )
 
-    print(f"MCP tools: {', '.join(t.name for t in mcp_tool_list)}")
-    print(f"Native tools: {', '.join(native_handlers.keys())}")
+        print(f"MCP tools: {', '.join(t.name for t in mcp_tool_list)}")
+        print(f"Native tools: {', '.join(native_handlers.keys())}")
 
-    queries = [
-        "What's the weather in Tokyo?",
-        "What time is it in Europe/London?",
-        "Calculate 42 multiplied by 17",
-        "Convert 'hello world' to uppercase",
-        "What's 25 + 17, and what's the weather in Paris?",
-    ]
+        queries = [
+            "What's the weather in Tokyo?",
+            "What time is it in Europe/London?",
+            "Calculate 42 multiplied by 17",
+            "Convert 'hello world' to uppercase",
+            "What's 25 + 17, and what's the weather in Paris?",
+        ]
 
-    for query in queries:
-        await agent.process_query(query)
-
-    await mcp_client.close()
+        for query in queries:
+            await agent.process_query(query)
 
 
 if __name__ == "__main__":

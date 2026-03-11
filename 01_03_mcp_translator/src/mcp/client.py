@@ -19,8 +19,9 @@ the configured process. Bridges MCP tool format to OpenAI function format.
 import json
 import os
 import sys
+from contextlib import asynccontextmanager
 from pathlib import Path
-from typing import Any
+from typing import Any, AsyncIterator
 
 from mcp import ClientSession, StdioServerParameters
 from mcp.client.stdio import stdio_client
@@ -47,17 +48,22 @@ def _load_mcp_config() -> dict:
     return json.loads(_MCP_CONFIG_PATH.read_text(encoding="utf-8"))
 
 
-async def create_mcp_client(server_name: str = "files") -> ClientSession:
-    """Create an MCP client for a server defined in mcp.json.
+@asynccontextmanager
+async def create_mcp_client(server_name: str = "files") -> AsyncIterator[ClientSession]:
+    """Async context manager that yields a ClientSession for a server in mcp.json.
 
     Args:
         server_name: Key in the ``mcpServers`` object of mcp.json.
 
-    Returns:
+    Yields:
         An initialized ``ClientSession`` connected via stdio.
 
     Raises:
         KeyError: If the server name is not found in mcp.json.
+
+    Example:
+        async with create_mcp_client() as client:
+            tools = await list_mcp_tools(client)
     """
     config = _load_mcp_config()
     server_cfg = config["mcpServers"].get(server_name)
@@ -76,21 +82,23 @@ async def create_mcp_client(server_name: str = "files") -> ClientSession:
         **(server_cfg.get("env") or {}),
     }
 
+    # Use the running venv interpreter when command is a Python alias
+    command = server_cfg["command"]
+    if command in ("python", "python3"):
+        command = sys.executable
+
     server_params = StdioServerParameters(
-        command=server_cfg["command"],
+        command=command,
         args=server_cfg.get("args", []),
         env=env,
         cwd=str(_PROJECT_ROOT),
     )
 
-    # stdio_client is a context manager; we return the session for the caller to manage
-    _read, _write = await stdio_client(server_params).__aenter__()
-    session = ClientSession(_read, _write)
-    await session.__aenter__()
-    await session.initialize()
-
-    log.success(f"Connected to {server_name} via stdio")
-    return session
+    async with stdio_client(server_params) as (read, write):
+        async with ClientSession(read, write) as session:
+            await session.initialize()
+            log.success(f"Connected to {server_name} via stdio")
+            yield session
 
 
 async def list_mcp_tools(client: ClientSession) -> list[Any]:

@@ -24,6 +24,17 @@ import sys
 from pathlib import Path
 from typing import Optional
 
+# Switch Windows console to UTF-8 and reconfigure streams before any output.
+# Without this, Polish characters and Unicode box-drawing symbols are garbled
+# because the Windows console defaults to cp1250/cp850.
+if sys.platform == "win32":
+    import subprocess
+    subprocess.run(["chcp", "65001"], capture_output=True, shell=True)
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", line_buffering=True)
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8")
+
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from src.config import server as server_config
@@ -44,32 +55,34 @@ async def main() -> None:
 
     # Connect to files-mcp (stdio transport, config in mcp.json)
     log.start("Connecting to MCP server...")
-    _mcp_client = await create_mcp_client()
-    _mcp_tools = await list_mcp_tools(_mcp_client)
-    log.success(
-        f"Connected with {len(_mcp_tools)} tools: {', '.join(t.name for t in _mcp_tools)}"
-    )
+    async with create_mcp_client() as mcp_client:
+        _mcp_client = mcp_client
+        _mcp_tools = await list_mcp_tools(mcp_client)
+        log.success(
+            f"Connected with {len(_mcp_tools)} tools: {', '.join(t.name for t in _mcp_tools)}"
+        )
 
-    # HTTP API for on-demand translation (runs in background thread)
-    http_server = start_http_server(
-        server_config,
-        lambda: {"mcp_client": _mcp_client, "mcp_tools": _mcp_tools},
-    )
+        # HTTP API for on-demand translation (runs in background thread)
+        http_server = start_http_server(
+            server_config,
+            lambda: {"mcp_client": _mcp_client, "mcp_tools": _mcp_tools},
+        )
 
-    # Handle shutdown signals
-    loop = asyncio.get_running_loop()
+        # Handle shutdown signals
+        loop = asyncio.get_running_loop()
 
-    async def shutdown():
-        log.warn("Shutting down...")
-        if _mcp_client:
-            await _mcp_client.__aexit__(None, None, None)
-        http_server.shutdown()
+        async def shutdown():
+            log.warn("Shutting down...")
+            http_server.shutdown()
 
-    for sig in (signal.SIGINT, signal.SIGTERM):
-        loop.add_signal_handler(sig, lambda: asyncio.create_task(shutdown()))
+        try:
+            for sig in (signal.SIGINT, signal.SIGTERM):
+                loop.add_signal_handler(sig, lambda: asyncio.create_task(shutdown()))
+        except NotImplementedError:
+            pass  # add_signal_handler not supported on Windows
 
-    # Watch workspace/translate/ for new files (runs until shutdown)
-    await run_translation_loop(_mcp_client, _mcp_tools)
+        # Watch workspace/translate/ for new files (runs until shutdown)
+        await run_translation_loop(mcp_client, _mcp_tools)
 
 
 if __name__ == "__main__":

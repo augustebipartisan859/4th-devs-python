@@ -178,9 +178,10 @@ async def list_resources() -> list[Resource]:
 
 @_server.read_resource()
 async def read_resource(uri: str) -> str:
-    if uri == "config://project":
+    uri_str = str(uri)
+    if uri_str == "config://project":
         return get_project_config()["text"]
-    if uri == "data://stats":
+    if uri_str == "data://stats":
         return get_runtime_stats()["text"]
     raise ValueError(f"Unknown resource: {uri}")
 

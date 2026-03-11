@@ -43,7 +43,7 @@ async def _run_tool(mcp_client: ClientSession, tool_call: dict) -> dict:
 
     try:
         result = await call_mcp_tool(mcp_client, tool_call["name"], args)
-        output = json.dumps(result)
+        output = json.dumps(result, ensure_ascii=False)
         log.tool_result(tool_call["name"], True, output)
         return {
             "type": "function_call_output",
@@ -51,7 +51,7 @@ async def _run_tool(mcp_client: ClientSession, tool_call: dict) -> dict:
             "output": output,
         }
     except Exception as error:
-        output = json.dumps({"error": str(error)})
+        output = json.dumps({"error": str(error)}, ensure_ascii=False)
         log.tool_result(tool_call["name"], False, str(error))
         return {
             "type": "function_call_output",

@@ -150,7 +150,8 @@ async def run_translation_loop(
 
     await _ensure_directories(mcp_client)
 
-    async def tick() -> None:
+    async def tick() -> int:
+        """Run one poll cycle. Returns number of pending files found."""
         try:
             source_files = await _list_files(mcp_client, config.source_dir, filter_by_extension=True)
             translated_files = await _list_files(mcp_client, config.target_dir)
@@ -158,13 +159,22 @@ async def run_translation_loop(
 
             for filename in pending:
                 await _translate_file(filename, mcp_client, mcp_tools)
+
+            return len(pending)
         except Exception as error:
             log.error("Watch loop error", str(error))
+            return 0
 
-    # Initial run
-    await tick()
+    # Initial run — exit immediately if nothing to translate
+    pending_count = await tick()
+    if pending_count == 0:
+        log.info("No pending files — nothing to translate.")
+        return
 
-    # Polling loop
+    # Polling loop — exit once all files are translated
     while True:
         await asyncio.sleep(config.poll_interval)
-        await tick()
+        pending_count = await tick()
+        if pending_count == 0:
+            log.success("All files translated.")
+            return

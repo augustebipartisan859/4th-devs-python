@@ -22,6 +22,16 @@ import json
 import sys
 from typing import Any, Optional
 
+# Force UTF-8 + line-buffered stdout/stderr so that:
+#   - Unicode symbols (✔ ◐ ℹ ╭ ╰ …) render correctly on Windows consoles
+#     that default to cp1250/cp850 instead of UTF-8.
+#   - Log messages appear immediately even when stdout is not a full TTY
+#     (VS Code integrated terminal, subprocess capture, etc.).
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", line_buffering=True)
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8")
+
 _RESET = "\x1b[0m"
 _BOLD = "\x1b[1m"
 _DIM = "\x1b[2m"
@@ -74,7 +84,7 @@ class _Logger:
         print(f"  {_GREEN}✓{_RESET} {_BOLD}{msg}{' ' + extra if extra else ''}{_RESET}")
 
     def tool(self, name: str, args: Any) -> None:
-        args_str = json.dumps(args) if isinstance(args, (dict, list)) else str(args)
+        args_str = json.dumps(args, ensure_ascii=False) if isinstance(args, (dict, list)) else str(args)
         truncated = _truncate(args_str)
         self.info(f"🔧 {name} {truncated}")
 

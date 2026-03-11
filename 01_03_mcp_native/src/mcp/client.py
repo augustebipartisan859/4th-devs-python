@@ -19,29 +19,32 @@ so the agent can treat MCP tools like any other tool.
 """
 
 import json
-from typing import Any
+from contextlib import asynccontextmanager
+from typing import Any, AsyncIterator
 
 from mcp import ClientSession
 from mcp.server.fastmcp import FastMCP
 from mcp.shared.memory import create_connected_server_and_client_session
 
 
-async def create_mcp_client(server: FastMCP) -> ClientSession:
-    """Create a ClientSession connected to an in-memory FastMCP server.
+@asynccontextmanager
+async def create_mcp_client(server: FastMCP) -> AsyncIterator[ClientSession]:
+    """Async context manager that yields a ClientSession connected to an
+    in-memory FastMCP server.
 
     Args:
         server: The ``FastMCP`` server instance to connect to.
 
-    Returns:
+    Yields:
         An initialized ``ClientSession`` connected via in-memory transport.
 
-    Note:
-        The caller must manage the session lifecycle. Use this inside an
-        ``asyncio`` run block and close the session when done.
+    Example:
+        async with create_mcp_client(mcp_server) as client:
+            tools = await list_mcp_tools(client)
     """
     # FastMCP exposes the underlying Server as ._mcp_server
-    session = await create_connected_server_and_client_session(server._mcp_server)
-    return session
+    async with create_connected_server_and_client_session(server._mcp_server) as session:
+        yield session
 
 
 async def list_mcp_tools(client: ClientSession) -> list[Any]:

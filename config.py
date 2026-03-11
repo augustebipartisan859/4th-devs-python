@@ -18,6 +18,12 @@ and helpers consumed by all lesson modules.
 
 import sys
 import os
+
+# Force UTF-8 output on Windows (cp1252 terminal can't encode emoji/non-ASCII)
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+    
 from pathlib import Path
 from dotenv import load_dotenv
 

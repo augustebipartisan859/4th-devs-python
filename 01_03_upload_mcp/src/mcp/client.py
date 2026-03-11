@@ -19,6 +19,7 @@ so the agent can route calls back to the correct server.
 
 import json
 import os
+import sys
 from typing import Any
 
 from mcp import ClientSession, StdioServerParameters
@@ -59,6 +60,10 @@ async def _create_stdio_client(server_name: str, server_config: dict) -> ClientS
         "NODE_ENV": os.environ.get("NODE_ENV", ""),
         **(server_config.get("env") or {}),
     }
+
+    # Use the running venv interpreter when command is a Python alias
+    if cmd in ("python", "python3"):
+        cmd = sys.executable
 
     params = StdioServerParameters(
         command=cmd,
@@ -156,12 +161,19 @@ async def list_all_mcp_tools(clients: dict[str, ClientSession]) -> list[Any]:
 
         for tool in tools:
             # Attach prefixed name and server metadata while preserving original schema
+            def _g(obj, attr, default=None):
+                if hasattr(obj, attr):
+                    return getattr(obj, attr)
+                if isinstance(obj, dict):
+                    return obj.get(attr, default)
+                return default
+
             prefixed = type("PrefixedTool", (), {
-                "name": f"{server_name}__{getattr(tool, 'name', tool.get('name'))}",
-                "description": getattr(tool, "description", tool.get("description", "")),
-                "inputSchema": getattr(tool, "inputSchema", tool.get("inputSchema", {})),
+                "name": f"{server_name}__{_g(tool, 'name')}",
+                "description": _g(tool, "description", ""),
+                "inputSchema": _g(tool, "inputSchema", {}),
                 "_server": server_name,
-                "_original_name": getattr(tool, "name", tool.get("name")),
+                "_original_name": _g(tool, "name"),
             })()
             all_tools.append(prefixed)
 
@@ -238,5 +250,5 @@ async def close_all_clients(clients: dict[str, ClientSession]) -> None:
         if cm:
             try:
                 await cm.__aexit__(None, None, None)
-            except Exception:
+            except (Exception, BaseException):
                 pass
