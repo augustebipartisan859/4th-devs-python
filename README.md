@@ -38,49 +38,49 @@ If both keys are present, provider defaults to OpenAI. Override with `AI_PROVIDE
 
 | Example | Run | Description |
 |---------|-----|-------------|
-| `01_01_interaction` | `python -m 01_01_interaction.app` | Multi-turn conversation via input history |
-| `01_01_structured` | `python -m 01_01_structured.app` | Structured JSON output with schema validation |
-| `01_01_grounding` | `python -m 01_01_grounding.app` | Fact-checked HTML from markdown notes |
+| `01_01_interaction` | `python "01_01_interaction/app.py"` | Multi-turn conversation via input history |
+| `01_01_structured` | `python "01_01_structured/app.py"` | Structured JSON output with schema validation |
+| `01_01_grounding` | `python "01_01_grounding/app.py"` | Fact-checked HTML from markdown notes |
 
 Run examples from the project root:
 
 ```bash
-python -m 01_01_interaction.app
-python -m 01_01_structured.app
-python -m 01_01_grounding.app
+python  "01_01_interaction/app.py"
+python  "01_01_structured/app.py"
+python  "01_01_grounding/app.py"
 ```
 
 The grounding example accepts optional arguments:
 
 ```bash
 # Process a specific note file
-python -m 01_01_grounding.app my-note.md
+python "01_01_grounding/app.py" my-note.md
 
 # Force rebuild from scratch (ignore cache)
-python -m 01_01_grounding.app --force
+python "01_01_grounding/app.py" --force
 
 # Combine both
-python -m 01_01_grounding.app my-note.md --force
+python "01_01_grounding/app.py" my-note.md --force
 
 # Control parallel batch size (default 3, max 10)
-python -m 01_01_grounding.app --batch=5
+python "01_01_grounding/app.py" --batch=5
 
 # Disable batching entirely
-python -m 01_01_grounding.app --no-batch
+python "01_01_grounding/app.py" --no-batch
 ```
 
 ## Lesson 02
 
 | Example | Run | Description |
 |---------|-----|-------------|
-| `01_02_tools` | `python -m 01_02_tools.app` | Minimal tool-use: weather lookup + send email with web search |
-| `01_02_tool_use` | `python -m 01_02_tool_use.app` | Sandboxed filesystem assistant (list, read, write, delete files) |
+| `01_02_tools` | `python "01_02_tools/app.py"` | Minimal tool-use: weather lookup + send email with web search |
+| `01_02_tool_use` | `python "01_02_tool_use/app.py"` | Sandboxed filesystem assistant (list, read, write, delete files) |
 
 Run examples from the project root:
 
 ```bash
-python -m 01_02_tools.app
-python -m 01_02_tool_use.app
+python "01_02_tools/app.py"
+python "01_02_tool_use/app.py"
 ```
 
 `01_02_tools` — The model uses web search to look up the current weather in Kraków, then calls a mocked `send_email` tool to deliver the result to a recipient.
@@ -97,18 +97,18 @@ pip install mcp
 
 | Example | Run | Description |
 |---------|-----|-------------|
-| `01_03_mcp_core` | `python 01_03_mcp_core/app.py` | Full MCP demo over stdio: tools, resources, prompts, sampling |
-| `01_03_mcp_native` | `python 01_03_mcp_native/app.py` | Unified agent with in-memory MCP tools and native Python tools |
-| `01_03_mcp_translator` | `python 01_03_mcp_translator/app.py` | Polish→English file-watching translation agent with HTTP API |
-| `01_03_upload_mcp` | `python 01_03_upload_mcp/app.py` | Multi-server upload agent (files-mcp stdio + uploadthing HTTP) |
+| `01_03_mcp_core` | `python "01_03_mcp_core/app.py"` | Full MCP demo over stdio: tools, resources, prompts, sampling |
+| `01_03_mcp_native` | `python "01_03_mcp_native/app.py"` | Unified agent with in-memory MCP tools and native Python tools |
+| `01_03_mcp_translator` | `python "01_03_mcp_translator/app.py"` | Polish→English file-watching translation agent with HTTP API |
+| `01_03_upload_mcp` | `python "01_03_upload_mcp/app.py"` | Multi-server upload agent (files-mcp stdio + uploadthing HTTP) |
 
 Run examples from the project root:
 
 ```bash
-python 01_03_mcp_core/app.py
-python 01_03_mcp_native/app.py
-python 01_03_mcp_translator/app.py
-python 01_03_upload_mcp/app.py
+python  "01_03_mcp_core/app.py"
+python  "01_03_mcp_native/app.py"
+python  "01_03_mcp_translator/app.py"
+python  "01_03_upload_mcp/app.py"
 ```
 
 `01_03_mcp_core` — Spawns a local MCP server as a subprocess over stdio. Exercises all MCP primitives: `calculate` and `summarize_with_confirmation` tools (the latter demonstrates server-initiated sampling), `config://project` and `data://stats` resources, and a `code-review` prompt template.
