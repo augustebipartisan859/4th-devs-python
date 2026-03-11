@@ -110,20 +110,33 @@ def _require_text(value: str, field_name: str) -> str:
         raise ValueError(f'"{field_name}" must be a non-empty string.')
     return value.strip()
 
+WEATHER_BY_CITY: Dict[str, Dict[str, Any]] = {
+    "Kraków": {"temp": -2, "conditions": "snow"},
+    "London": {"temp": 8, "conditions": "rain"},
+    "Tokyo": {"temp": 15, "conditions": "cloudy"},
+}
 
-handlers: Dict[str, Any] = {
-    "get_weather": lambda args: {
-        "Kraków": {"temp": -2, "conditions": "snow"},
-        "London": {"temp": 8, "conditions": "rain"},
-        "Tokyo": {"temp": 15, "conditions": "cloudy"},
-    }.get(_require_text(args["location"], "location"), {"temp": None, "conditions": "unknown"}),
-    "send_email": lambda args: {
+
+def _handle_get_weather(args: Dict[str, Any]) -> Dict[str, Any]:
+    """Return mocked weather data for a validated city name."""
+    location = _require_text(args["location"], "location")
+    return WEATHER_BY_CITY.get(location, {"temp": None, "conditions": "unknown"})
+
+
+def _handle_send_email(args: Dict[str, Any]) -> Dict[str, Any]:
+    """Return a mocked send-email result after validating all text fields."""
+    return {
         "success": True,
         "status": "sent",
         "to": _require_text(args["to"], "to"),
         "subject": _require_text(args["subject"], "subject"),
         "body": _require_text(args["body"], "body"),
-    },
+    }
+
+
+handlers: Dict[str, Any] = {
+    "get_weather": _handle_get_weather,
+    "send_email": _handle_send_email,
 }
 
 # ---------------------------------------------------------------------------
