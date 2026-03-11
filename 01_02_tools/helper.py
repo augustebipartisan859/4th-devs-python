@@ -18,7 +18,7 @@ and the core tool-execution + conversation-building helpers.
 """
 
 import json
-import sys
+import sys, os
 from typing import Any, Callable, Dict, List
 
 # ---------------------------------------------------------------------------
@@ -68,7 +68,7 @@ def get_final_text(response: Dict[str, Any]) -> str:
 # ---------------------------------------------------------------------------
 
 # Respect the NO_COLOR convention and non-TTY environments.
-_supports_color: bool = sys.stdout.isatty() and not sys.environ.get("NO_COLOR")
+_supports_color: bool = sys.stdout.isatty() and not os.environ.get("NO_COLOR")
 
 _ANSI = {
     "reset": "\x1b[0m",

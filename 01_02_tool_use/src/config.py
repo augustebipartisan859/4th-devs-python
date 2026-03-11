@@ -21,7 +21,7 @@ import sys
 from pathlib import Path
 
 # Add project root to sys.path so the top-level config.py is importable.
-sys.path.insert(0, str(Path(__file__).parent.parent.parent.parent))
+sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 from config import resolve_model_for_provider
 
