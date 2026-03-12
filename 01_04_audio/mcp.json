@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "files": {
+      "command": "npx",
+      "args": [
+        "tsx",
+        "../../../mcp/files-mcp/src/index.ts"
+      ],
+      "env": {
+        "FS_ROOT": "."
+      }
+    }
+  }
+}
