@@ -1,0 +1,1 @@
+User: Opowiedz mi o cache'u i gdzie został wspomniany.

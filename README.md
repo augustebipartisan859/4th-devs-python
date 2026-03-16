@@ -124,3 +124,104 @@ curl -X POST "http://localhost:3000/api/translate" \
 ```
 
 `01_03_upload_mcp` — Connects to two MCP servers simultaneously: `files` (stdio, local filesystem) and `uploadthing` (HTTP, remote). The agent lists workspace files, uploads untracked ones using `{{file:path}}` placeholders, and records results in `uploaded.md`. Edit `01_03_upload_mcp/mcp.json` and replace the uploadthing URL placeholder before running.
+<<<<<<< HEAD
+=======
+
+## Lesson 04 — Audio Processing
+
+The Lesson 04 example uses the **Google Gemini API** for audio. Set the key before running:
+
+```bash
+GEMINI_API_KEY=your_gemini_api_key_here
+```
+
+| Example | Run | Description |
+|---------|-----|-------------|
+| `01_04_audio` | `python "01_04_audio/app.py"` | Interactive audio agent — transcribe, analyze, query, and generate audio via Gemini |
+
+Run from the project root:
+
+```bash
+python "01_04_audio/app.py"
+```
+
+`01_04_audio` — An interactive REPL agent powered by Google Gemini. Supports transcription (with timestamps, speaker detection, emotion detection, and translation), audio analysis (general, music, speech, sounds), custom audio queries, and text-to-speech generation with 30+ voices. Accepts local audio files (MP3, WAV, AIFF, AAC, OGG, FLAC, M4A, WebM) and YouTube URLs. Files larger than 20 MB use Gemini's resumable upload API. Also connects to a `files-mcp` stdio server for filesystem access.
+
+## Lesson 05 — Human-in-the-loop Agents
+
+Lesson 05 examples require a **Resend** account for email sending. Set these env vars before running:
+
+```bash
+RESEND_API_KEY=re_your_key_here
+RESEND_FROM=noreply@yourdomain.com
+```
+
+| Example | Run | Description |
+|---------|-----|-------------|
+| `01_05_confirmation` | `python "01_05_confirmation/app.py"` | Terminal REPL agent with interactive confirmation gate before sending emails |
+
+Run from the project root:
+
+```bash
+python "01_05_confirmation/app.py"
+```
+
+`01_05_confirmation` — An interactive terminal REPL agent with filesystem access (via `files-mcp` over stdio) and email sending (via Resend). The key lesson feature is a **human-in-the-loop confirmation gate**: before executing `send_email`, the user sees a formatted preview of the email and chooses `[Y] Send once`, `[T] Trust & Send` (skip confirmations for the rest of the session), or `[N] Cancel`. Edit `01_05_confirmation/workspace/whitelist.json` to add allowed recipient addresses or domain patterns.
+
+| Example | Run | Description |
+|---------|-----|-------------|
+| `01_05_agent` | `uvicorn 01_05_agent.app:app` | Production-grade multi-agent REST API with SQLite persistence, MCP, and context pruning |
+
+Run from the project root:
+
+```bash
+# Create the data directory first (only needed once)
+mkdir -p .data
+
+# Start the server (default: http://127.0.0.1:3000)
+.venv/Scripts/python -m uvicorn "01_05_agent.app:app" --host 127.0.0.1 --port 3000
+```
+
+`01_05_agent` — A production-grade multi-agent API server built with FastAPI. Supports multi-turn conversations, tool use (calculator, delegate, send_message, ask_user), MCP server connections, SQLite persistence for agents/sessions/items, context window pruning with LLM-based summarization, per-IP rate limiting, and Langfuse tracing. Agents are defined as YAML templates in `01_05_agent/workspace/`. Provider support: OpenAI, OpenRouter, Google Gemini.
+
+Configure in `01_05_agent/.env` (or the workspace root `.env`):
+
+```bash
+OPENAI_API_KEY=your_key        # or OPENROUTER_API_KEY / GEMINI_API_KEY
+DEFAULT_MODEL=openai:gpt-4o    # optional — provider:model format
+DATABASE_URL=file:.data/agent.db
+```
+
+API endpoints:
+
+```bash
+# Health check
+curl http://127.0.0.1:3000/health
+
+# Interactive API docs
+open http://127.0.0.1:3000/docs
+```
+
+## Lesson 01 — Week 2 (Module 02)
+
+### Prerequisites
+
+The `02_01_agentic_rag` example requires the `files-mcp` TypeScript server. Make sure you have Node.js and `npx` available, then install the MCP server's dependencies once:
+
+```bash
+cd ../mcp/files-mcp
+npm install
+```
+
+| Example | Run | Description |
+|---------|-----|-------------|
+| `02_01_agentic_rag` | `python "02_01_agentic_rag/app.py"` | Agentic RAG — LLM-driven iterative search over a markdown knowledge base via MCP file tools |
+
+Run from the project root:
+
+```bash
+python "02_01_agentic_rag/app.py"
+```
+
+`02_01_agentic_rag` — An agentic RAG (Retrieval-Augmented Generation) system where the model autonomously decides what to search, how deeply to read, and when it has collected enough evidence to answer. Uses the OpenAI Responses API with reasoning enabled (`effort: medium`) and connects to a local `files-mcp` stdio server that exposes `list`, `search`, and `read` tools. The agent runs up to 50 steps per query, executes parallel tool calls within each step, and maintains full conversation history across turns (enabling follow-up questions). Type `exit` to quit, `clear` to reset conversation and token stats. The knowledge base is a set of Polish-language AI_devs course notes (`S01*.md`); the agent always responds in English.
+>>>>>>> 00edc81 (Convert JS module 02_01_agentic_rag to Python)
