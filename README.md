@@ -142,6 +142,7 @@ GEMINI_API_KEY=your_gemini_api_key_here
 | `01_04_audio` | `python "01_04_audio/app.py"` | Interactive audio agent — transcribe, analyze, query, and generate audio via Gemini |
 | `01_04_image_recognition` | `python "01_04_image_recognition/app.py"` | Autonomous image classification agent — reads character knowledge profiles and classifies images into category folders using vision analysis |
 | `01_04_image_editing` | `python "01_04_image_editing/app.py"` | Interactive image editing agent — generate or edit images via Gemini/OpenRouter, auto-analyze quality, maintain multi-turn conversation history |
+| `01_04_image_guidance` | `python "01_04_image_guidance/app.py"` | Pose-guided cell-shaded character generation — copies JSON templates, selects pose references, generates and analyzes characters via Gemini/OpenRouter |
 
 Run from the project root:
 
@@ -154,6 +155,8 @@ python "01_04_image_editing/app.py"
 `01_04_audio` — An interactive REPL agent powered by Google Gemini. Supports transcription (with timestamps, speaker detection, emotion detection, and translation), audio analysis (general, music, speech, sounds), custom audio queries, and text-to-speech generation with 30+ voices. Accepts local audio files (MP3, WAV, AIFF, AAC, OGG, FLAC, M4A, WebM) and YouTube URLs. Files larger than 20 MB use Gemini's resumable upload API. Also connects to a `files-mcp` stdio server for filesystem access.
 
 `01_04_image_recognition` — A single-run autonomous agent that classifies images from the `images/` folder into character-named subfolders based on knowledge profile files in `knowledge/`. Uses the Responses API for both orchestration and vision analysis (`understand_image` native tool). Connects to a `files-mcp` stdio server for all filesystem operations (read, copy, list).
+
+`01_04_image_guidance` — A pose-guided cell-shaded character generation agent. The model follows a structured workflow: list available pose references in `workspace/reference/`, copy `workspace/template.json` to `workspace/prompts/`, edit only the subject section, then call `create_image` with the JSON prompt and pose reference. Supports both OpenRouter (preferred) and native Gemini backends. Includes `analyze_image` for quality review with ACCEPT/RETRY verdicts. Place pose reference images (e.g. `walking-pose.png`, `running-pose.png`) in `workspace/reference/` before running.
 
 `01_04_image_editing` — An interactive REPL image editing agent. Uses two native tools: `create_image` (generate from scratch or edit with reference images) and `analyze_image` (quality analysis with ACCEPT/RETRY verdict). Supports both native Gemini and OpenRouter backends for image generation. Maintains full conversation history across REPL turns. Place source images in `workspace/input/`, results are saved to `workspace/output/`. Edit `workspace/style-guide.md` to define visual style constraints.
 
