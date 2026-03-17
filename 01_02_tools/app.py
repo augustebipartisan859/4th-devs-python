@@ -28,6 +28,10 @@ import httpx
 import sys
 from pathlib import Path
 
+import logging
+
+logging.basicConfig(level=logging.WARNING)
+
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from config import (
@@ -37,6 +41,7 @@ from config import (
     resolve_model_for_provider,
     AI_PROVIDER,
 )
+from http_logger import get_event_hooks
 from helper import (
     build_next_conversation,
     get_final_text,
@@ -54,6 +59,7 @@ MODEL = resolve_model_for_provider("gpt-4.1-mini")
 # buildResponsesRequest() maps webSearch=True to OpenAI web_search_preview tool
 # or OpenRouter :online model suffix.  We replicate that logic inline here.
 WEB_SEARCH: bool = True
+LOG_HTTP: bool = True  # set False to disable HTTP request/response file logging
 
 tools: List[Dict[str, Any]] = [
     {
@@ -202,12 +208,13 @@ async def _request_response(input_: List[Dict[str, Any]]) -> Dict[str, Any]:
     """
     body = _build_request(MODEL, input_, tools, WEB_SEARCH)
 
-    async with httpx.AsyncClient() as client:
+    hooks = get_event_hooks() if LOG_HTTP else {}
+    async with httpx.AsyncClient(event_hooks=hooks) as client:
         response = await client.post(
             RESPONSES_API_ENDPOINT,
             json=body,
             headers={
-                "Content-Type": "application/json",
+                "Content-Type": "application/json", # not necessary with httpx's json= parameter, but explicit for clarity
                 "Authorization": f"Bearer {AI_API_KEY}",
                 **EXTRA_API_HEADERS,
             },
